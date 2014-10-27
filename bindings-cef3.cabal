@@ -1,0 +1,42 @@
+name:                bindings-cef3
+version:             0.1.0
+synopsis:            Raw bindings for Chromium Embedded Framework CEF3
+description:
+  Bindings for the low level C API of the Chromium Embedded 
+  Framework, CEF3. See:
+  .
+  <https://code.google.com/p/chromiumembedded/>
+homepage:            https://github.com/fluffynukeit/bindings-cef3
+license:             BSD3
+license-file:        LICENSE
+author:              Daniel Austin
+maintainer:          Daniel Austin
+category:            FFI
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+bug-reports:         https://github.com/fluffynukeit/bindings-cef3/issues
+
+library
+  exposed-modules:      Bindings.CEF3
+  other-modules:        Bindings.CEF3.Internal.CefString,
+                        Bindings.CEF3.Internal.CefStringTypes,
+                        Bindings.CEF3.Internal.CefStringList,
+                        Bindings.CEF3.Internal.CefStringMap,
+                        Bindings.CEF3.Internal.CefStringMultimap,
+                        Bindings.CEF3.Internal.CefTypes,
+                        Bindings.CEF3.Internal.CefTime,
+                        Bindings.CEF3.Internal.CefTypesLinux
+  include-dirs:        ./,
+                       include,
+                       include/capi
+  pkgconfig-depends:   gtk+-2.0
+  build-depends:       base >=4.7 && <4.8,
+                       bindings-DSL >= 1.0.16 && < 1.1
+  hs-source-dirs:      src
+  extensions:          ForeignFunctionInterface
+  build-tools:         hsc2hs
+source-repository head
+  type: git
+  location: https://github.com/fluffynukeit/bindings-cef3
+  branch: master
