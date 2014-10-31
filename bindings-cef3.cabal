@@ -36,6 +36,24 @@ library
   hs-source-dirs:      src
   extensions:          ForeignFunctionInterface
   build-tools:         hsc2hs
+
+executable cefsimple
+  build-depends:       base >=4.7 && <4.8,
+                       bindings-cef3 >0.1 && <0.2,
+                       bindings-DSL >= 1.0.16 && < 1.1,
+                       unix
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       Gtk
+  hs-source-dirs:      cefsimple
+  extra-lib-dirs:      ./
+  extra-libraries:     cef, gcrypt, cups, cap, udev, stdc++, gcc_s
+  pkgconfig-depends:   x11, xrender, xtst, xi, xcomposite, xfixes, xdamage,
+                       xcursor, xext, nss, expat, alsa, dbus-glib-1, gconf-2.0,
+                       gtk+-2.0
+  ghc-options:         -Wall -threaded -dynamic -optl-Wl,-rpath,$ORIGIN
+  extensions:          ForeignFunctionInterface
+
 source-repository head
   type: git
   location: https://github.com/fluffynukeit/bindings-cef3
