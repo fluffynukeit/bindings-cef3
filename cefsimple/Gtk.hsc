@@ -21,6 +21,3 @@ import Bindings.CEF3
 #ccall gtk_vbox_new,                CInt -> CInt -> IO (Ptr <GtkWidget>)
 #ccall gtk_container_add,           Ptr a -> Ptr <GtkWidget> -> IO ()
 #ccall gtk_widget_show_all,         Ptr <GtkWidget> -> IO ()
-#ccall gtk_label_new,               CString -> IO (Ptr <GtkWidget>)
-#ccall gtk_frame_new,               CString -> IO (Ptr <GtkWidget>)
-#ccall gtk_main,                    IO ()
