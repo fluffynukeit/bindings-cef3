@@ -1,4 +1,5 @@
 
+{-# OPTIONS_GHC -fno-warn-unused-imports #-}
 #include <bindings.dsl.h>
 #include <gtk/gtk.h>
 

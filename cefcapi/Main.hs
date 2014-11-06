@@ -7,6 +7,13 @@
 -- In effort to keep the parallel to the model C program close, not much
 -- care is paid to freeing allocated resources.  Proper implementation
 -- would look after things like that.
+--
+-- Note that to run the program, you will need a locale .pak file located
+-- in the locales directory.  Pak files are available in the CEF
+-- distribution.  If you don't have the right file, you'll see an error
+-- similar to
+-- [1106/071615:FATAL:main_delegate.cc(499)] Check failed:
+-- !loaded_locale.empty(). Locale could not be found for en-US
 
 module Main where
 
